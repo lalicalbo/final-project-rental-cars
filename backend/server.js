@@ -4,7 +4,7 @@ import express from "express";
 
 import { carsRoutes } from "./routes/index.js";
 console.log("routes",carsRoutes)
-import { getAllCars  } from "./controllers/index.js";
+import { getAllCars,getOneCar } from "./controllers/index.js";
 
 
 //creating app
@@ -13,6 +13,7 @@ const app = express();
 //routes
 
 app.get(carsRoutes.GET, getAllCars)
+app.get(carsRoutes.GET_ONE, getOneCar)
 
 
 //lauch server
