@@ -1,5 +1,5 @@
-import { getAllCars ,getOneCar} from "./cars.controllers.js";
+import { getAllCars ,getOneCar, createOneCar,updateCar,deleteCar} from "./cars.controllers.js";
 
 
 
-export { getAllCars,getOneCar };
+export { getAllCars,getOneCar,createOneCar ,updateCar,deleteCar};
