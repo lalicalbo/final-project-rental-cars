@@ -19,6 +19,9 @@ export const getOneCar = (req, res) => {
     Car.findById(id, (err, data) => {
         if (err) res.status(404).send(err);
         res.status(200).json(data);
+        if(data){
+            console.log("data",data)
+        }
 
     });
 };

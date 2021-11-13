@@ -1,16 +1,29 @@
 import Car from "../models/cars.models.js";
 import dataBase from "../dataBase.js"
 
-export const rentACar =(req, res)=>{
-    console.log("BODY",req.body)
-    const { id ,quantity}= req.body
-    
+export const quotation = (req, res) => {
+    console.log("BODY", req.body)
+    const { id, initial_date, end_date } = req.body
+
     dataBase.connect();
-    Car.findById(id,(err,data)=>{
-        console.log("data",data)
-        if(err)res.status(400).send(err)
+    Car.findById(id, (err, data) => {
+        console.log("DATAAAAA",data)
+        const { precio } = data
+        if (err) res.status(400).send(err)
 
-    })
+        let date1 = new Date(initial_date);
+        let date2 = new Date(end_date);
+     
+        let Difference_In_Time = date2.getTime() - date1.getTime();
+        let Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
 
+        const response = {
+            initial_date: initial_date,
+            end_date: end_date,
+            days: Difference_In_Days,
+            total: (precio * Difference_In_Days)
+        }
+        res.status(200).json(response);
+    });
 
 };

@@ -4,7 +4,7 @@ import express from "express";
 
 import { carsRoutes ,rentRoutes} from "./routes/index.js";
 console.log("routes",rentRoutes)
-import { getAllCars,getOneCar,createOneCar,updateCar,deleteCar ,rentACar} from "./controllers/index.js";
+import { getAllCars,getOneCar,createOneCar,updateCar,deleteCar ,quotation} from "./controllers/index.js";
 
 
 //creating app
@@ -27,7 +27,7 @@ app.delete(carsRoutes.DELETE, deleteCar)
 
 //rent routes
 
-app.post(rentRoutes.RENT , rentACar)
+app.post(rentRoutes.RENT , quotation)
 
 
 

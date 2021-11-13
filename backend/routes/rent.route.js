@@ -1,5 +1,5 @@
 const rentRoutes={
-    RENT:"/rent",
+    RENT:"/quotation",
 }
 
 
