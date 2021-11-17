@@ -1,6 +1,6 @@
-import { getAllCars ,getOneCar, createOneCar,updateCar,deleteCar} from "./cars.controllers.js";
-import { quotation } from "./rent.controllers.js";
+import * as carCtrl  from "./cars.controllers.js";
+import * as rents from "./rent.controllers.js";
 
 
 
-export { getAllCars,getOneCar,createOneCar ,updateCar,deleteCar,quotation};
+export {carCtrl ,rents};

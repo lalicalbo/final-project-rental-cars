@@ -1,6 +1,4 @@
-import carsRoutes from "./cars.route.js";
+import router from "./cars.route.js";
 import rentRoutes from "./rent.route.js";
 
-
-
-export { carsRoutes, rentRoutes }
+export { router, rentRoutes };

@@ -1,6 +1,7 @@
 
 import './App.scss';
 import imagen from "./resources/imagen-banner3.jpeg"
+import RegisterForm from './components/RegisterForm';
 
 function App() {
   return (
@@ -8,7 +9,10 @@ function App() {
      <header>
       <div className="img">
       <img src={imagen} />
-      </div>  
+      </div> 
+      <div className="form">
+        <RegisterForm />
+        </div> 
       </header>
     </div>
   );

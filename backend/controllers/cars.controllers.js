@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 import dataBase from "../dataBase.js";
 import { Car } from "../models/index.js";
 
+
 export const getAllCars = (req, res) => {
     dataBase.connect();
     Car.find((err, data) => {
@@ -69,3 +70,5 @@ export const deleteCar = (req, res) => {
         });
     });
 };
+
+
