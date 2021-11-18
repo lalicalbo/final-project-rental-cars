@@ -2,29 +2,24 @@ console.log("********API CAR**********");
 
 import express from "express";
 
-import { router ,rentRoutes} from "./routes/index.js";
-console.log("routes",rentRoutes)
-import {rents} from "./controllers/index.js";
-
+import { router, routerQuotation} from "./routes/index.js";
+console.log("SERVER WORKING")
 
 //creating app
 const app = express();
 
 app.use(express.json());
 
-app.get("/" ,(req, res)=>{
+app.get("/", (req, res) => {
     res.send("Main page BUGGY Y BUMPER,INC")
 
 });
 
 app.use("/api", router);
-
-
-app.post(rentRoutes.RENT , rents.quotation)
-
+app.use("/home", routerQuotation);
 
 
 //lauch server
-app.listen(3007, ()=>{
+app.listen(3007, () => {
     console.log("inizializing server")
 });

@@ -7,17 +7,17 @@ export const quotation = (req, res) => {
 
     dataBase.connect();
     Car.findById(id, (err, data) => {
-        console.log("DATAAAAA",data)
+        console.log("DATAAAAA", data)
         const { precio } = data
         if (err) res.status(400).send(err);
-      
+
 
         let date1 = new Date(initial_date);
         let date2 = new Date(end_date);
-     
+
         let Difference_In_Time = date2.getTime() - date1.getTime();
         let Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
-        let days=Difference_In_Days;
+        let days = Difference_In_Days;
 
         const response = {
             initial_date: initial_date,
@@ -25,7 +25,7 @@ export const quotation = (req, res) => {
             total: (precio * days)
         }
         res.status(200).json(response);
-        console.log("response",response)
+        console.log("response", response)
     });
 
 };
