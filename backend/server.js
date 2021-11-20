@@ -19,8 +19,8 @@ app.use("/api", router);
 app.use("/home", routerQuotation);
 app.use("/use", routerUsers);
 
-
+const PORT = process.env.PORT || 5000
 //lauch server
-app.listen(3007, () => {
+app.listen(PORT, () => {
     console.log("inizializing server")
 });
