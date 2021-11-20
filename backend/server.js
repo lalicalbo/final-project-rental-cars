@@ -2,7 +2,7 @@ console.log("********API CAR**********");
 
 import express from "express";
 
-import { router, routerQuotation} from "./routes/index.js";
+import { router, routerQuotation, routerUsers} from "./routes/index.js";
 console.log("SERVER WORKING")
 
 //creating app
@@ -17,6 +17,7 @@ app.get("/", (req, res) => {
 
 app.use("/api", router);
 app.use("/home", routerQuotation);
+app.use("/use", routerUsers);
 
 
 //lauch server
